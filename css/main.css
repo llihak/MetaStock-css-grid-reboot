@@ -1718,8 +1718,6 @@ h1 {
   background-color: var(--accent-color);
 }
 
-/* grid start */
-/* end amp-master .grid */
 .grid {
   --gtcx: 320px;
   --gtc: repeat(auto-fit, minmax(var(--gtcx), 1fr));
@@ -1734,6 +1732,9 @@ h1 {
   -ms-grid-columns: var(--gtc);
       grid-template-columns: var(--gtc);
   grid-gap: var(--gg);
+  --cspan: 1;
+  --gce: span var(--cspan);
+  --gre: span 1;
   --gx: 1;
 }
 
@@ -1741,12 +1742,12 @@ h1 {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 var(--gtcx);
           flex: 1 1 var(--gtcx);
-  --gc: 1/-1;
+  --gc: auto;
   --gr: auto;
   grid-column: var(--gc);
   grid-row: var(--gr);
-  --gce: auto;
-  --gre: auto;
+  grid-column-end: var(--gce);
+  grid-row-end: var(--gre);
 }
 
 .grid > .full,
@@ -1762,7 +1763,7 @@ h1 {
   grid-column: 1/-1;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 600px) {
   .grid {
     --gtc: var(--gtcs, 1fr);
   }
@@ -1776,7 +1777,7 @@ h1 {
 
 @media (min-width: 900px) {
   .grid {
-    --gtc: var(--gtcl, 2fr 1fr);
+    --gtc: var(--gtcl, 1fr 1fr 1fr);
   }
 }
 /*# sourceMappingURL=main.css.map */

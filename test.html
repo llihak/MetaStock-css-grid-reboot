@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>grid test</title>
-  <link rel="stylesheet" href="grid.css">
+  <title>grid test 2.0</title>
+  <link rel="stylesheet" href="css/main.css">
 
   <style>
     body {background-color: white;}
@@ -12,13 +12,36 @@
 </head>
 <body>
   
-  <div class="test grid">
-    <div class="item">one</div>
-    <div class="item">two</div>
-    <div class="item">three</div>
-    <div class="item">four</div>
-    <div class="item">five</div>
-  </div>
+  <h3>first grid</h3>
+  <div class="first test grid">
+    <div class="item-1"><p>one</p></div>
+    <div class="item-2"><p>two</p></div>
+    <div class="item-3"><p>three</p></div>
+    <div class="item-4"><p>four</p></div>
+    <!-- <div class="1item-5"><p>five</p></div>
+    <div class="item-6"><p>1six</p></div> -->
+  </div>1
+
+  <hr>
+
+  <h3>second grid</h3>
+  <div class="second test grid" style="--gtcm: 1.61803399fr 1fr; --gtcl: 1fr 1.61803399fr;">
+    <div class="item-1"><p>one</p></div>
+    <div class="item-2"><p>two</p></div>
+    <div class="item-3"><p>three</p></div>
+    <div class="item-4"><p>four</p></div>
+    <!-- <div class="1item-5"><p>five</p></div>
+    <div class="item-6"><p>1six</p></div> -->
+  </div>1
+
+  <style>
+    body { margin: 1rem; }
+    .grid > * {
+      background-color: beige;
+      padding: .5rem;
+      outline: 1px solid red;
+    }
+  </style>
 
 </body>
 </html>

@@ -1718,34 +1718,38 @@ h1 {
   background-color: var(--accent-color);
 }
 
-.grid {
-  --gtcx: 320px;
-  --gtc: repeat(auto-fit, minmax(var(--gtcx), 1fr));
-  --gg: 20px;
+.rw {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.rw > * {
+  -webkit-box-flex: var(--fg, 0);
+      -ms-flex: var(--fg, 0) var(--fs, 1) var(--fb, auto);
+          flex: var(--fg, 0) var(--fs, 1) var(--fb, auto);
+}
+
+.grid {
   display: -ms-grid;
   display: grid;
+  --gtc: repeat(12, 1fr);
   -ms-grid-columns: var(--gtc);
       grid-template-columns: var(--gtc);
+  --gg: 20px;
   grid-gap: var(--gg);
-  --cspan: 1;
-  --gce: span var(--cspan);
-  --gre: span 1;
   --gx: 1;
 }
 
 .grid > * {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 var(--gtcx);
-          flex: 1 1 var(--gtcx);
-  --gc: auto;
-  --gr: auto;
-  grid-column: var(--gc);
-  grid-row: var(--gr);
+  grid-column: var(--gc, auto);
+  grid-row: var(--gr, auto);
+  --gce: span var(--cspan, 1);
+  --gre: span var(--rspan, 1);
   grid-column-end: var(--gce);
   grid-row-end: var(--gre);
 }
@@ -1767,11 +1771,25 @@ h1 {
   .grid {
     --gtc: var(--gtcs, 1fr);
   }
+  .grid > * {
+    -ms-grid-column-span: var(--sm, 1);
+        grid-column-end: span var(--sm, 1);
+    -webkit-box-flex: var(--sm);
+        -ms-flex: var(--sm);
+            flex: var(--sm);
+  }
 }
 
 @media (min-width: 600px) {
   .grid {
     --gtc: var(--gtcm, 1fr 1fr);
+  }
+  .grid > * {
+    -ms-grid-column-span: var(--md, 1);
+        grid-column-end: span var(--md, 1);
+    -webkit-box-flex: var(--md);
+        -ms-flex: var(--md);
+            flex: var(--md);
   }
 }
 
@@ -1779,5 +1797,17 @@ h1 {
   .grid {
     --gtc: var(--gtcl, 1fr 1fr 1fr);
   }
+  .grid > * {
+    -ms-grid-column-span: var(--lg, 1);
+        grid-column-end: span var(--lg, 1);
+    -webkit-box-flex: var(--lg);
+        -ms-flex: var(--lg);
+            flex: var(--lg);
+  }
+}
+
+body {
+  width: 90vw;
+  max-width: 1300px;
 }
 /*# sourceMappingURL=main.css.map */

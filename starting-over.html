@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>foundation grid test</title>
+    <title>starting over grid test</title>
     <link rel="stylesheet" href="css/main.css" />
 
     <style>
@@ -14,9 +14,9 @@
         margin: 0 auto;
       }
 
-      .grid {
-        /* --gtc: repeat(12,1fr); */
-      }
+      /* .grid {
+        --gtc: repeat(12,1fr);
+      } */
 
       .grid > * { background-color: #eee; outline: 1px solid red; }
 
@@ -28,28 +28,29 @@
   </head>
   <body>
     
-    <div class="first grid rw" >
-      <div class="small-2 large-4 columns" style="--sm: 2; --md: 4;" >2 - 4 - ?</div>
-      <div class="small-4 large-4 columns" style="--sm: 4; --md: 4;" >4 - 4 - ?</div>
-      <div class="small-6 large-4 columns" style="--sm: 6; --md: 4;" >6 - 4 - ?</div>
+    <div class="first grid rw"  >
+      <div class="small-2 large-4 columns" style="--md: 4; --lg: 3;" >sm def - md 4 - lg 3</div>
+      <div class="small-4 large-4 columns" style="--md: 4; --lg: 4;" >sm def - md 4 - lg 4</div>
+      <div class="small-6 large-4 columns" style="--md: 4; --lg: 5;" >sm def - md 4 - lg 5</div>
     </div>
     <hr>
     <div class="second grid rw">
-      <div class="large-3 columns" style="--md:3; --lg: 3;" >? - ? - ?</div>
-      <div class="large-6 columns" style="--md:6; --lg: 6;" >? - ? - ?</div>
-      <div class="large-3 columns" style="--md:3; --lg: 3;" >? - ? - ?</div>
+      <div class="large-3 columns" style="--md:3; --lg: 3;" >sm def - md 3 - lg 3</div>
+      <div class="large-6 columns" style="--md:6; --lg: 6;" >sm def - md 6 - lg 6</div>
+      <div class="large-3 columns" style="--md:3; --lg: 3;" >sm def - md 3 - lg 3</div>
     </div>
     <hr>
     <div class="third grid rw">
-      <div class="medium-6 large-2 columns" style="--md: 6; --lg: 2">? - 6 - 2</div>
-      <div class="medium-6 large-8 columns" style="--md: 6; --lg: 8">? - 6 - 8</div>
+      <div class="medium-6 large-4 columns" style="--md: 6; --lg: 4">sm def - md 6 - lg 4</div>
+      <div class="medium-6 large-8 columns" style="--md: 6; --lg: 8">sm def - md 6 - lg 8</div>
+    </div>
+<hr>
+    <div class="fourth grid rw">
+      <div class="medium-4 columns" style="--md: 4; --lg: 2">this is a column</div>
+      <div class="medium-8 columns" style="--md: 8; --lg: 10">this is a column</div>
     </div>
 
 <!--     
-    <div class="fourth grid rw">
-      <div class="small-3 columns">this is a column</div>
-      <div class="small-9 columns">this is a column</div>
-    </div>
     <div class="grid rw">
       <div class="large-4 columns">this is a column</div>
       <div class="large-8 columns">this is a column</div>

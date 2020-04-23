@@ -11,3 +11,8 @@
 
 @import "partials/therest";
 @import "partials/grid";
+
+body {
+  width: 90vw;
+  max-width: 1300px;
+}

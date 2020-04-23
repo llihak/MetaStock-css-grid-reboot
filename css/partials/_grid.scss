@@ -1,27 +1,33 @@
 $bp-md: 600px;  
 $bp-lg: 900px;
 
+.rw {
+  display:flex;
+  flex-flow:row wrap
+ }
+
+ .rw > * {
+  flex: var(--fg, 0) var(--fs,1) var(--fb, auto);
+ }
+ 
 /// this is a documentation comment
+
+// default is 12 column grid 
+// override with mq classes
+
 .grid {
-  --gtcx: 320px;
-  --gtc: repeat(auto-fit, minmax(var(--gtcx), 1fr));
-  --gg: 20px;
-  display: flex;
-  flex-wrap: wrap;
   display: grid;
+  --gtc: repeat(12, 1fr);
   grid-template-columns: var(--gtc);
+  --gg: 20px;
   grid-gap: var(--gg);
-  --cspan: 1;
-  --gce: span var(--cspan);
-  --gre: span 1;
   --gx: 1;
 }
 .grid > * {
-  flex: 1 1 var(--gtcx);
-  --gc: auto;
-  --gr: auto;
-  grid-column: var(--gc);
-  grid-row: var(--gr);
+  grid-column: var(--gc, auto);
+  grid-row: var(--gr, auto);
+  --gce: span var(--cspan, 1);
+  --gre: span var(--rspan, 1);
   grid-column-end: var(--gce);
   grid-row-end: var(--gre);
 }
@@ -39,22 +45,34 @@ $bp-lg: 900px;
 
 @media (max-width: $bp-md) {
   .grid {
-      // --gtcs: 1fr;
       --gtc: var(--gtcs, 1fr);
+
+      &> * {
+        grid-column-end: span var(--sm, 1);
+        flex: var(--sm);
+      }
   }
 }
 
 @media (min-width: $bp-md) {
   .grid {
-      // --gtcm: 1fr 1fr;
       --gtc: var(--gtcm, 1fr 1fr);
+      
+      & > * {
+        grid-column-end: span var(--md, 1);
+        flex: var(--md);
+      }
   }
 }
 
 @media (min-width: $bp-lg) {
   .grid {
-      // --gtcl: 1fr 1fr 1fr;
       --gtc: var(--gtcl, 1fr 1fr 1fr);
+      
+      & > * {
+        grid-column-end: span var(--lg, 1);
+        flex: var(--lg);
+      }
   }
 }
 

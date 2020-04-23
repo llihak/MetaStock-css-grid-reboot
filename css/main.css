@@ -1742,6 +1742,8 @@ h1 {
       grid-template-columns: var(--gtc);
   --gg: 20px;
   grid-gap: var(--gg);
+  --gce: span 1;
+  --gre: span 1;
   --gx: 1;
 }
 

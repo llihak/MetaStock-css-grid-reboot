@@ -1,6 +1,11 @@
 $bp-md: 600px;  
 $bp-lg: 900px;
 
+.grid {
+  --golden: 1.61803399fr 1fr;
+  --golden-r: 1fr 1.61803399fr;
+}
+
 
 
 .grid {
@@ -19,8 +24,8 @@ $bp-lg: 900px;
 }
 .grid > * {
   flex: 1 1 var(--gtcx);
-  grid-column-end: var(--gce);
-  grid-row-end: var(--gre);
+  --gce: var(--gce);
+  --gre: var(--gre);
 }
 .grid > .full,
 .grid > h1,
@@ -37,29 +42,49 @@ $bp-lg: 900px;
   .grid {
     --gtc: var(--gtcs, 1fr);
     & > * {
-      grid-column-end: span var(--sm, 1fr);
+      --gce: span var(--sm, 1fr);
+      --gr: span var(--grm, 1);
+      --gc: span var(--gcm, 1);
+      // flex: var(--sm, 1);
+
     }
   }
 }
 
 @media (min-width: $bp-md) {
+  body { background-color: aliceblue; }
   .grid {
     --gtc: var(--gtcm, 1fr 1fr);
     & > * {
-      grid-column-end: span var(--md, 1fr 1fr);
+      --gce: span var(--md, 1fr 1fr);
+      --gr: span var(--grm, 1);
+      --gc: span var(--gcm, 1);
+      // flex: var(--md, 1);
     }
   }
 }
 
 @media (min-width: $bp-lg) {
+  body { background-color: linen; }
   .grid {
     --gtc: var(--gtcl, 1fr 1fr 1fr);
     & > * {
-      grid-column-end: span var(--lg, 1fr 1fr 1fr);
+      --gce: span var(--lg, 1fr 1fr 1fr);
+      grid-row: span var(--grl, 1);
+      grid-column-end: span var(--gcl, 1);
+      flex: var(--lg, 1);
     }
   }
+  // .golden-l {
+  //   grid-template-columns: 1.61803399fr 1fr;
+  // }
+
 }
 
+
+.wtw {
+  line-height: 5.55555;
+}
 
 /* specific to this page only  */
 body {

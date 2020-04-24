@@ -75,7 +75,14 @@ $bp-lg: 900px;
         grid-column-end: span var(--lg, 1);
         flex: var(--lg);
       }
+      &.golden-l {
+        --gtcl: 1.61803399fr 1fr;
+      }
+      
   }
 }
 
+.wtw {
+  line-height: 3.333;
+}
 

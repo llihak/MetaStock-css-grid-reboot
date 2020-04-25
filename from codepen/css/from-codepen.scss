@@ -1,22 +1,26 @@
 $bp-md: 600px;  
 $bp-lg: 900px;
 
+
+
 .grid {
+  --gtcx: 320px;
+  --gtc: repeat(auto-fit, minmax(var(--gtcx), 1fr));
+  --gg: 20px;
   display: flex;
   flex-wrap: wrap;
   
   display: grid;
-  // grid-template-columns: var(--gtc, repeat(auto-fit, minmax(var(--gtcx), 1fr)));
-  grid-template-columns: var(--gtc, repeat(12, 1fr));
-  --golden: 1.61803399fr 1fr;
-  --golden-r: 1fr 1.61803399fr;
-  grid-gap: var(--gg, 1rem);
+  grid-template-columns: var(--gtc);
+  grid-gap: var(--gg);
+  --gce: span 1;
+  --gre: span 1;
+  --gx: 1;
 }
-
 .grid > * {
-  flex: 1 1 var(--gtcx, 320px);
-  grid-column-end: var(--gce, span 1);
-  grid-row-end: var(--gre, span 1);
+  flex: 1 1 var(--gtcx);
+  grid-column-end: var(--gce);
+  grid-row-end: var(--gre);
 }
 .grid > .full,
 .grid > h1,
@@ -31,44 +35,42 @@ $bp-lg: 900px;
 
 @media (max-width: $bp-md) {
   .grid {
-    grid-template-columns: var(--gtcs, 1fr);
+    --gtc: var(--gtcs, 1fr);
     & > * {
-      grid-column: span var(--gcm, 1);
-      grid-column-end: span var(--sm, 1);
-      grid-row: span var(--grm, 1);
-      // flex: var(--sm, 1);
-
+      grid-column-end: span var(--sm, 1fr);
     }
   }
 }
 
 @media (min-width: $bp-md) {
-  body { background-color: aliceblue; }
   .grid {
-    grid-template-columns: var(--gtcm, 1fr 1fr);
+    --gtc: var(--gtcm, 1fr 1fr);
     & > * {
-      grid-column:  span var(--gcm, 1);
-      grid-column-end: span var(--md, 1);
-      grid-row:  span var(--grm, 1);
-      // flex: var(--md, 1);
+      grid-column-end: span var(--md, 1fr 1fr);
     }
   }
 }
 
 @media (min-width: $bp-lg) {
-  body { background-color: linen; }
   .grid {
-    grid-template-columns: var(--gtcl, 1fr 1fr 1fr); //repeat(3, [col] 1fr)
+    --gtc: var(--gtcl, 1fr 1fr 1fr);
     & > * {
-      grid-column: span var(--gcl, 1);
-      grid-column-end: span var(--lg, 1); 
-      grid-row: span var(--grl, 1);
-      flex: var(--lg, 1);
+      grid-column-end: span var(--lg, 1fr 1fr 1fr);
     }
   }
 }
 
 
-.wtw {
-  line-height: 6.666666;
+/* specific to this page only  */
+body {
+  width: 90vw;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+.grid > * {
+  background-color: #eee;
+  outline: 1px solid red;
+  padding: 0.5rem;
 }

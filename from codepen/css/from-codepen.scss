@@ -1,26 +1,21 @@
 $bp-md: 600px;  
 $bp-lg: 900px;
 
-
-
 .grid {
-  --gtcx: 320px;
-  --gtc: repeat(auto-fit, minmax(var(--gtcx), 1fr));
-  --gg: 20px;
   display: flex;
   flex-wrap: wrap;
   
   display: grid;
-  grid-template-columns: var(--gtc);
-  grid-gap: var(--gg);
-  --gce: span 1;
-  --gre: span 1;
-  --gx: 1;
+  grid-template-columns: var(--gtc, repeat(12, [col] 1fr));
+  --golden: 1.61803399fr 1fr;
+  --golden-r: 1fr 1.61803399fr;
+  grid-gap: var(--gg, 1rem);
 }
+
 .grid > * {
-  flex: 1 1 var(--gtcx);
-  grid-column-end: var(--gce);
-  grid-row-end: var(--gre);
+  flex: 1 1 var(--gtcx, 320px);
+  grid-column-end: var(--gce, span 1);
+  grid-row-end: var(--gre, span 1);
 }
 .grid > .full,
 .grid > h1,
@@ -35,42 +30,48 @@ $bp-lg: 900px;
 
 @media (max-width: $bp-md) {
   .grid {
-    --gtc: var(--gtcs, 1fr);
+    grid-template-columns: var(--gtcs, 1fr);
     & > * {
-      grid-column-end: span var(--sm, 1fr);
+      grid-column: var(--gcm, auto);
+      grid-column-end: span var(--sm, 1);
+      grid-row: var(--grm, auto);
+      // flex: var(--sm, 1);
+
     }
   }
 }
 
 @media (min-width: $bp-md) {
+  body { background-color: aliceblue; }
   .grid {
-    --gtc: var(--gtcm, 1fr 1fr);
+    grid-template-columns: var(--gtcm, repeat(2, [col] 1fr));
     & > * {
-      grid-column-end: span var(--md, 1fr 1fr);
+      grid-column: var(--gcm, auto);
+      grid-column-end: span var(--md-span, 1);
+      grid-column-end: span var(--cspanm, 1);
+      grid-row:  var(--grm, auto);
+      grid-row-end: var(--rspanm, 1);
+      // flex: var(--md-span, 1);
     }
   }
 }
 
 @media (min-width: $bp-lg) {
+  body { background-color: linen; }
   .grid {
-    --gtc: var(--gtcl, 1fr 1fr 1fr);
+    grid-template-columns: var(--gtcl, repeat(3, [col] 1fr));
     & > * {
-      grid-column-end: span var(--lg, 1fr 1fr 1fr);
+      grid-column: var(--gcl, auto);
+      grid-column-end: span var(--lg-span, 1); 
+      grid-column-end: span var(--cspanl, 1);
+      grid-row: var(--grl, auto);
+      grid-row-end: var(--rspanl, 1);
+      flex: var(--lg-span, 1);
     }
   }
 }
 
 
-/* specific to this page only  */
-body {
-  width: 90vw;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-
-.grid > * {
-  background-color: #eee;
-  outline: 1px solid red;
-  padding: 0.5rem;
+.wtw {
+  line-height: 8.88888888;
 }

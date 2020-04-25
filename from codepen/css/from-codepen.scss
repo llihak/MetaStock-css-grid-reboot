@@ -1,14 +1,13 @@
 $bp-md: 600px;  
 $bp-lg: 900px;
 
+
+
+
 .grid {
   --golden: 1.61803399fr 1fr;
   --golden-r: 1fr 1.61803399fr;
-}
 
-
-
-.grid {
   --gtcx: 320px;
   --gtc: repeat(auto-fit, minmax(var(--gtcx), 1fr));
   --gg: 20px;
@@ -69,7 +68,7 @@ $bp-lg: 900px;
   .grid {
     --gtc: var(--gtcl, 1fr 1fr 1fr);
     & > * {
-      --gce: span var(--lg, 1fr 1fr 1fr);
+      --gce: span var(--lg, 1fr 1fr 1fr); //repeat(3, [col] 1fr)
       grid-row: span var(--grl, 1);
       grid-column-end: span var(--gcl, 1);
       flex: var(--lg, 1);
@@ -84,18 +83,4 @@ $bp-lg: 900px;
 
 .wtw {
   line-height: 5.55555;
-}
-
-/* specific to this page only  */
-body {
-  width: 90vw;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-
-.grid > * {
-  background-color: #eee;
-  outline: 1px solid red;
-  padding: 0.5rem;
 }

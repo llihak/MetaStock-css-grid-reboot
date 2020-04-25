@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>from codepen</title>
-  <link rel="stylesheet" href="css/from-codepen.css">
+  <link rel="stylesheet" href="css/from-codepen.css" />
+
+  <style id="Specific">
+    .nested.grid {
+      background-color: #ffffd9;
+    }
+
+    body {
+      width: 90vw;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .grid>* {
+      background-color: #eee;
+      outline: 1px solid red;
+      padding: 0.5rem;
+    }
+
+    .nested.grid h3 {
+    margin: 0;
+}
+  </style>
 </head>
+
 <body>
-  
   <h3>first grid - <i>reasonable defaults</i> at sm, md, lg</h3>
   <div class="first test grid">
     <div class="item">one</div>
@@ -18,7 +41,7 @@
     <div class="item">six</div> -->
   </div>
 
-  <hr>
+  <hr />
 
   <h3>second grid - changed up md and lg via 2 custom properties</h3>
   <div class="second test grid" style="--gtcm: 2fr 10fr; --gtcl: 50px 8fr 4fr 50px;">
@@ -30,28 +53,59 @@
     <div class="item">six</div> -->
   </div>
 
-  <br><hr>
+  <br />
+  <hr />
   <div class="overview">
     <div class="hd">About Metastock</div>
     <div class="bd grid">
-      <div class="blurb" style="--gcl: 2">JUST THESE 2 ARE IN A GRID - 2:1.    blurb - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa accusamus minus placeat neque tempora veniam dicta suscipit rem in repudiandae.</div>
+      <div class="blurb" style="--gcl: 2;">
+        JUST THESE 2 ARE IN A GRID - 2:1. blurb - Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Culpa accusamus minus placeat neque
+        tempora veniam dicta suscipit rem in repudiandae.
+      </div>
       <div class="pic">monitor pic</div>
     </div>
     <div class="ft">some buttons</div>
   </div>
 
-  <br><hr>
-  <div class="overview-2">
-    <div class="bd grid"  style="--gtcl: var(--golden); --gg: 0 1rem;">
-      <div class="hd full">About Golden Ratio</div>
-      <div class="blurb">THIS WHOLE THING IS A GRID - USING GOLDEN RATIO.    blurb - Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa accusamus minus placeat neque tempora veniam dicta suscipit rem in repudiandae.</div>
-      <div class="pic">monitor pic</div>
-      <div class="ft full">some buttons</div>
+  <br />
+  <hr />
+  <div class="overview-2 bd grid" style="--gtcl: var(--golden); --gg: 0 1rem;">
+    <div class="hd full">About Golden Ratio</div>
+    <div class="blurb">
+      THIS WHOLE THING IS A GRID - USING GOLDEN RATIO. blurb - Lorem, ipsum
+      dolor sit amet consectetur adipisicing elit. Culpa accusamus minus
+      placeat neque tempora veniam dicta suscipit rem in repudiandae.
     </div>
+    <div class="pic">monitor pic</div>
+    <div class="ft full">some buttons</div>
   </div>
 
+  <br />
+  <hr />
+  <div class="golden-overview-nested bd grid" style="--gtcl: 1fr 2fr; --gg: 0 1rem;">
+    <div class="hd full">About nesting grids</div>
+    <div class="pic">monitor pic</div>
+    <div class="nested grid" style="--gtcm: 1fr; --gtcl: var(--golden); --gg: 5px;">
+      <h3 class="heading full">A nested grid</h3>
+      <div class="nest">
+        <p>
+          THIS IS A NESTED GRID WITH THE GOLDEN RATIO REVERSED.    Lorem ipsum pepsi cola.
+        </p>
+      </div>
+      <div class="nest-lg">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui aliquam
+          atque aspernatur similique reiciendis consectetur itaque expedita
+          nam, ipsa recusandae?
+        </p>
+      </div>
+    </div>
+    <div class="ft full">some buttons</div>
+  </div>
 
-  <br><hr>
+  <br />
+  <hr />
   <div class="twelve grid">
     <div class="col">col</div>
     <div class="col">col</div>
@@ -66,6 +120,6 @@
     <div class="col">col</div>
     <div class="col">col</div>
   </div>
-
 </body>
+
 </html>

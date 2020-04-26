@@ -53,7 +53,7 @@ $bp-lg: 900px;
 @media (min-width: $bp-md) {
   body { background-color: aliceblue; }
   .grid {
-    grid-template-columns: var(--gtcm, repeat(var(--md-cols, 2), [col] 1fr));
+    grid-template-columns: var(--gtc-md, repeat(var(--md-cols, 2), [col] 1fr));
     & > * {
       grid-column: var(--gcm, auto);
       grid-column-end: span var(--md-span, 1);

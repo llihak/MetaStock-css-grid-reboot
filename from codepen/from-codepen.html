@@ -44,7 +44,7 @@
   <hr />
 
   <h3>second grid - changed up md and lg via 2 custom properties</h3>
-  <div class="second test grid" style="--gtcm: 2fr 10fr; --gtcl: 50px 8fr 4fr 50px;">
+  <div class="second test grid" style="--gtc-md: 2fr 10fr; --gtcl: 50px 8fr 4fr 50px;">
     <div class="item">one</div>
     <div class="item">two</div>
     <div class="item">three</div>
@@ -110,11 +110,11 @@
   <section style="outline: 1px solid blue;">
   - or even simpler, could also be embedded style tag -
   <pre>
-  &lt;div class=&quot;overview-3 grid&quot; style=&quot;--gtcm: 3fr 2fr; --gtcl: 4fr 3fr;&quot;&gt;
+  &lt;div class=&quot;overview-3 grid&quot; style=&quot;--gtc-md: 3fr 2fr; --gtcl: 4fr 3fr;&quot;&gt;
     &lt;div class=&quot;blurb&quot;&gt;blurb&lt;/div&gt;
     &lt;div class=&quot;pic&quot;&gt;pic&lt;/div&gt;
   &lt;/div&gt;</pre>
-  <div class="overview-3 grid" style="--gtcm: 3fr 2fr; --gtcl: 4fr 3fr;">
+  <div class="overview-3 grid" style="--gtc-md: 3fr 2fr; --gtcl: 4fr 3fr;">
     <div class="blurb">blurb</div>
     <div class="pic">pic</div>
   </div>
@@ -153,10 +153,10 @@
 
   <br />
   <hr />
-  <div class="golden-overview-nested bd grid golden-lg-r" style="--gtcm: 1fr 2.5fr;--gg: 0 1rem;">
+  <div class="golden-overview-nested bd grid golden-lg-r" style="--gtc-md: 1fr 2.5fr;--gg: 0 1rem;">
     <div class="hd full">About nesting grids</div>
     <div class="pic">monitor pic</div>
-    <div class="nested grid golden-lg-r" style="--gtcm: 1fr; --gg: 5px;">
+    <div class="nested grid golden-lg-r" style="--gtc-md: 1fr; --gg: 5px;">
       <h3 class="heading full">A nested grid</h3>
       <div class="nest">
         <p>
@@ -176,7 +176,7 @@
 
   <br />
   <hr />
-  <div class="manycols grid" style="--gtcm: var(--golden) 1fr 1fr; --lg-cols: 7;">
+  <div class="manycols grid" style="--gtc-md: var(--golden) 1fr 1fr; --lg-cols: 7;">
     <div class="col" style="--md-span: 2;--lg-span: 4;">col</div>
     <div class="col" style="--lg-span: 3;">col</div>
     <div class="col">col</div>

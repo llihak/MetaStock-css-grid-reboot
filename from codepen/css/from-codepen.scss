@@ -2,15 +2,24 @@ $bp-md: 600px;
 $bp-lg: 900px;
 
 .grid {
-  display: flex;
+
+  display: flex; // for fallback ??
   flex-wrap: wrap;
   
   display: grid;
-  grid-template-columns: var(--gtc, repeat(12, [col] 1fr));
-  --golden: 1.61803399fr 1fr;
-  --golden-r: 1fr 1.61803399fr;
+  // grid-template-columns: var(--gtc, repeat(12, [col] 1fr));
   grid-gap: var(--gg, 1rem);
+
+  // this does not account for md and smaller though ??? 
+  // &.golden {
+  //   grid-template-columns: 1.61803399fr 1fr;
+  // }
+  // &.golden-r {
+  //   grid-template-columns: 1fr 1.61803399fr;
+  // }
 }
+
+
 
 .grid > * {
   flex: 1 1 var(--gtcx, 320px);
@@ -44,14 +53,20 @@ $bp-lg: 900px;
 @media (min-width: $bp-md) {
   body { background-color: aliceblue; }
   .grid {
-    grid-template-columns: var(--gtcm, repeat(2, [col] 1fr));
+    grid-template-columns: var(--gtcm, repeat(var(--md-cols, 2), [col] 1fr));
     & > * {
       grid-column: var(--gcm, auto);
       grid-column-end: span var(--md-span, 1);
-      grid-column-end: span var(--cspanm, 1);
+      
       grid-row:  var(--grm, auto);
-      grid-row-end: var(--rspanm, 1);
-      // flex: var(--md-span, 1);
+    }
+    
+    --golden: 1.618fr;
+    &.golden-md {
+      grid-template-columns: var(--golden) 1fr;
+    }
+    &.golden-md-r {
+      grid-template-columns: 1fr var(--golden);
     }
   }
 }
@@ -59,19 +74,26 @@ $bp-lg: 900px;
 @media (min-width: $bp-lg) {
   body { background-color: linen; }
   .grid {
-    grid-template-columns: var(--gtcl, repeat(3, [col] 1fr));
+    // should the default be 3 columns or 12 ????
+    grid-template-columns: var(--gtcl, repeat(var(--lg-cols,var(--md-cols)), [col] 1fr));
     & > * {
       grid-column: var(--gcl, auto);
-      grid-column-end: span var(--lg-span, 1); 
-      grid-column-end: span var(--cspanl, 1);
+      grid-column-end: span var(--lg-span, var(--md-span)); 
+
       grid-row: var(--grl, auto);
-      grid-row-end: var(--rspanl, 1);
       flex: var(--lg-span, 1);
+    }
+
+    &.golden-lg {
+      grid-template-columns: var(--golden) 1fr;
+    }
+    &.golden-lg-r {
+      grid-template-columns: 1fr var(--golden);
     }
   }
 }
 
 
 .wtw {
-  line-height: 8.88888888;
+  line-height: 9.999999999;
 }

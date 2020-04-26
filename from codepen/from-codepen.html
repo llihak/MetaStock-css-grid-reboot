@@ -25,8 +25,8 @@
     }
 
     .nested.grid h3 {
-    margin: 0;
-}
+      margin: 0;
+    }
   </style>
 </head>
 
@@ -53,24 +53,94 @@
     <div class="item">six</div> -->
   </div>
 
+  <br>
+  <hr>
+
+  <h3>several ways to do the same thing:</h3>
+  <section style="outline: 1px solid blue;">
+    more flexibility is possible (inline styles ala foundation):<pre>
+  &lt;div class=&quot;overview grid&quot; style=&quot;--md-cols: 5; --lg-cols: 7;&quot;&gt;&nbsp;
+    &lt;div class=&quot;blurb&quot;       style=&quot;--md-span: 3; --lg-span: 4&quot;&gt;blurb&lt;/div&gt;
+    &lt;div class=&quot;pic&quot;         style=&quot;--md-span: 2; --lg-span: 3&quot;&gt;pic&lt;/div&gt;
+  &lt;/div&gt;</pre>
+  <div class="overview grid" style="--md-cols: 5; --lg-cols: 7;">
+    <div class="blurb" style="--md-span: 3; --lg-span: 4">
+      blurb
+    </div>
+    <div class="pic" style="--md-span: 2; --lg-span: 3">pic</div>
+  </div>
+</section>
+
+  <br><br>
+  <section style="outline: 1px solid blue;">
+  - or embedded styles -
+  <pre>
+  &lt;style&gt;
+    .overview-2.grid {           --md-cols: 5; --lg-cols: 7; }
+    .overview-2.grid&gt;.blurb {    --md-span: 3; --lg-span: 4; }
+    .overview-2.grid&gt;.pic {      --md-span: 2; --lg-span: 3; }
+  &lt;/style&gt;
+  &lt;div class=&quot;overview-2 grid&quot; 
+    &lt;div class=&quot;blurb&quot;
+    &lt;div class=&quot;pic&quot;
+  &lt;/div&gt;</pre>
+  <style>
+    .overview-2.grid {
+      --md-cols: 5;
+      --lg-cols: 7;
+    }
+
+    .overview-2.grid>.blurb {
+      --md-span: 3;
+      --lg-span: 4;
+    }
+
+    .overview-2.grid>.pic {
+      --md-span: 2;
+      --lg-span: 3;
+    }
+  </style>
+  <div class="overview-2 grid">
+    <div class="blurb" >blurb</div>
+    <div class="pic" >pic</div>
+  </div>
+</section>
+  
+  <br><br>
+  <section style="outline: 1px solid blue;">
+  - or even simpler, could also be embedded style tag -
+  <pre>
+  &lt;div class=&quot;overview-3 grid&quot; style=&quot;--gtcm: 3fr 2fr; --gtcl: 4fr 3fr;&quot;&gt;
+    &lt;div class=&quot;blurb&quot;&gt;blurb&lt;/div&gt;
+    &lt;div class=&quot;pic&quot;&gt;pic&lt;/div&gt;
+  &lt;/div&gt;</pre>
+  <div class="overview-3 grid" style="--gtcm: 3fr 2fr; --gtcl: 4fr 3fr;">
+    <div class="blurb">blurb</div>
+    <div class="pic">pic</div>
+  </div>
+</section>
+
   <br />
   <hr />
-  <div class="overview">
-    <div class="hd">About Metastock</div>
-    <div class="bd grid">
-      <div class="blurb" style="--gcl: 2;">
-        JUST THESE 2 ARE IN A GRID - 2:1. blurb - Lorem, ipsum dolor sit amet
-        consectetur adipisicing elit. Culpa accusamus minus placeat neque
-        tempora veniam dicta suscipit rem in repudiandae.
+  <div class="MSoverview">
+    <div class="hd full">About Metastock</div>
+    <div class="bd grid " style="--gtcl: 2fr 1fr">
+      <div class="blurb">
+        <p>
+          JUST THESE 2 ARE IN A GRID - 2:1. blurb - Lorem, ipsum dolor sit amet
+          consectetur adipisicing elit. Culpa accusamus minus placeat neque
+          tempora veniam dicta suscipit rem in repudiandae.
+        </p>
       </div>
       <div class="pic">monitor pic</div>
     </div>
-    <div class="ft">some buttons</div>
+
+    <div class="ft full">some buttons</div>
   </div>
 
   <br />
   <hr />
-  <div class="overview-2 bd grid" style="--gtcl: var(--golden); --gg: 0 1rem;">
+  <div class="MSoverview-2 bd grid golden-md" style="--gg: 0 1rem;">
     <div class="hd full">About Golden Ratio</div>
     <div class="blurb">
       THIS WHOLE THING IS A GRID - USING GOLDEN RATIO. blurb - Lorem, ipsum
@@ -83,14 +153,14 @@
 
   <br />
   <hr />
-  <div class="golden-overview-nested bd grid" style="--gtcl: 1fr 2fr; --gg: 0 1rem;">
+  <div class="golden-overview-nested bd grid golden-lg-r" style="--gtcm: 1fr 2.5fr;--gg: 0 1rem;">
     <div class="hd full">About nesting grids</div>
     <div class="pic">monitor pic</div>
-    <div class="nested grid" style="--gtcm: 1fr; --gtcl: var(--golden); --gg: 5px;">
+    <div class="nested grid golden-lg-r" style="--gtcm: 1fr; --gg: 5px;">
       <h3 class="heading full">A nested grid</h3>
       <div class="nest">
         <p>
-          THIS IS A NESTED GRID WITH THE GOLDEN RATIO REVERSED.    Lorem ipsum pepsi cola.
+          THIS IS A NESTED GRID WITH THE GOLDEN RATIO REVERSED. Lorem ipsum pepsi cola.
         </p>
       </div>
       <div class="nest-lg">
@@ -106,9 +176,9 @@
 
   <br />
   <hr />
-  <div class="twelve grid">
-    <div class="col">col</div>
-    <div class="col">col</div>
+  <div class="manycols grid" style="--gtcm: var(--golden) 1fr 1fr; --lg-cols: 7;">
+    <div class="col" style="--md-span: 2;--lg-span: 4;">col</div>
+    <div class="col" style="--lg-span: 3;">col</div>
     <div class="col">col</div>
     <div class="col">col</div>
     <div class="col">col</div>
@@ -120,6 +190,8 @@
     <div class="col">col</div>
     <div class="col">col</div>
   </div>
+
+  <br><br>
 </body>
 
 </html>

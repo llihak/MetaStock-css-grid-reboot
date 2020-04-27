@@ -31,6 +31,30 @@
 </head>
 
 <body>
+  <h3>first grid - <i>reasonable defaults</i> at sm, md, lg</h3>
+  <div class="first test grid">
+    <div class="item">one</div>
+    <div class="item">two</div>
+    <div class="item">three</div>
+    <div class="item">four</div>
+    <!-- <div class="item">five</div>
+    <div class="item">six</div> -->
+  </div>
+
+  <hr />
+
+  <h3>second grid - changed up md and lg via 2 custom properties</h3>
+  <div class="second test grid" style="--gtc-md: 2fr 10fr; --gtc-lg: 50px 8fr 4fr 50px;">
+    <div class="item">one</div>
+    <div class="item">two</div>
+    <div class="item">three</div>
+    <div class="item">four</div>
+    <!-- <div class="item">five</div>
+    <div class="item">six</div> -->
+  </div>
+
+  <br>
+  <hr>
 
   <h3>several ways to do the same thing:</h3>
   <section style="outline: 1px solid blue;">
@@ -98,30 +122,6 @@
 
   <br />
   <hr />
-  <h3>first grid - <i>reasonable defaults</i> at sm, md, lg</h3>
-  <div class="first test grid">
-    <div class="item">one</div>
-    <div class="item">two</div>
-    <div class="item">three</div>
-    <div class="item">four</div>
-    <!-- <div class="item">five</div>
-    <div class="item">six</div> -->
-  </div>
-
-  <hr />
-
-  <h3>second grid - changed up md and lg via 2 custom properties</h3>
-  <div class="second test grid" style="--gtc-md: 2fr 10fr; --gtc-lg: 50px 8fr 4fr 50px;">
-    <div class="item">one</div>
-    <div class="item">two</div>
-    <div class="item">three</div>
-    <div class="item">four</div>
-    <!-- <div class="item">five</div>
-    <div class="item">six</div> -->
-  </div>
-
-  <br>
-  <hr>
   <div class="MSoverview">
     <div class="hd full">About Metastock</div>
     <div class="bd grid " style="--gtc-lg: 2fr 1fr">

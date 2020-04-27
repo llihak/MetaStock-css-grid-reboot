@@ -6,6 +6,10 @@
       flex-wrap: wrap;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: var(--gtc, ([col] 1fr)[12]);
+      grid-template-columns: var(--gtc, repeat(12, [col] 1fr));
+  --golden: 1.61803399fr 1fr;
+  --golden-r: 1fr 1.61803399fr;
   grid-gap: var(--gg, 1rem);
 }
 
@@ -50,23 +54,17 @@
     background-color: aliceblue;
   }
   .grid {
-    -ms-grid-columns: var(--gtc-md, ([col] 1fr)[var]);
-        grid-template-columns: var(--gtc-md, repeat(var(--md-cols, 2), [col] 1fr));
-    --golden: 1.618fr;
+    -ms-grid-columns: var(--gtcm, ([col] 1fr)[2]);
+        grid-template-columns: var(--gtcm, repeat(2, [col] 1fr));
   }
   .grid > * {
     grid-column: var(--gcm, auto);
-    -ms-grid-column-span: var(--md-span, 1);
-        grid-column-end: span var(--md-span, 1);
+    -ms-grid-column-span: var(--md, 1);
+        grid-column-end: span var(--md, 1);
+    grid-column-end: span var(--cspanm, 1);
     grid-row: var(--grm, auto);
-  }
-  .grid.golden-md {
-    -ms-grid-columns: var(--golden) 1fr;
-        grid-template-columns: var(--golden) 1fr;
-  }
-  .grid.golden-md-r {
-    -ms-grid-columns: 1fr var(--golden);
-        grid-template-columns: 1fr var(--golden);
+    -ms-grid-row-span: var(--rspanm, 1);
+        grid-row-end: var(--rspanm, 1);
   }
 }
 
@@ -75,29 +73,24 @@
     background-color: linen;
   }
   .grid {
-    -ms-grid-columns: var(--gtc-lg, ([col] 1fr)[var]);
-        grid-template-columns: var(--gtc-lg, repeat(var(--lg-cols, 3), [col] 1fr));
+    -ms-grid-columns: var(--gtcl, ([col] 1fr)[3]);
+        grid-template-columns: var(--gtcl, repeat(3, [col] 1fr));
   }
   .grid > * {
     grid-column: var(--gcl, auto);
-    -ms-grid-column-span: var(--lg-span, var(--md-span));
-        grid-column-end: span var(--lg-span, var(--md-span));
+    -ms-grid-column-span: var(--lg, 1);
+        grid-column-end: span var(--lg, 1);
+    grid-column-end: span var(--cspanl, 1);
     grid-row: var(--grl, auto);
-    -webkit-box-flex: var(--lg-span, 1);
-        -ms-flex: var(--lg-span, 1);
-            flex: var(--lg-span, 1);
-  }
-  .grid.golden-lg {
-    -ms-grid-columns: var(--golden) 1fr;
-        grid-template-columns: var(--golden) 1fr;
-  }
-  .grid.golden-lg-r {
-    -ms-grid-columns: 1fr var(--golden);
-        grid-template-columns: 1fr var(--golden);
+    -ms-grid-row-span: var(--rspanl, 1);
+        grid-row-end: var(--rspanl, 1);
+    -webkit-box-flex: var(--lg, 1);
+        -ms-flex: var(--lg, 1);
+            flex: var(--lg, 1);
   }
 }
 
 .wtw {
-  line-height: 9.999999999;
+  line-height: 8.88888888;
 }
-/*# sourceMappingURL=from-codepen.css.map */
+/*# sourceMappingURL=from-codepen.after-broken-now.css.map */

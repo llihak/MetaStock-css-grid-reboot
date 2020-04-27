@@ -75,7 +75,7 @@ $bp-lg: 900px;
   body { background-color: linen; }
   .grid {
     // should the default be 3 columns or 12 ????
-    grid-template-columns: var(--gtc-lg, repeat(var(--lg-cols,3), [col] 1fr));
+    grid-template-columns: var(--gtc-lg, repeat(var(--lg-cols,var(--md-cols)), [col] 1fr));
     & > * {
       grid-column: var(--gcl, auto);
       grid-column-end: span var(--lg-span, var(--md-span)); 

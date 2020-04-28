@@ -1,0 +1,88 @@
+$bp-md: 600px;  
+$bp-lg: 900px;
+
+.grid {
+
+  display: flex; // for fallback ??
+  flex-wrap: wrap;
+  
+  display: grid;
+  grid-gap: var(--gg, 1rem);
+
+}
+
+.grid > * {
+  flex: 1 1 var(--gtcx, 320px);
+  grid-column-end: var(--gce, span 1);
+  grid-row-end: var(--gre, span 1);
+}
+.grid > .full,
+.grid > h1,
+.grid > h2,
+.grid > h3,
+.grid > h4,
+.grid > h5,
+.grid > h6 {
+  flex: 0 0 100%;
+  grid-column: 1/-1;
+}
+
+@media (max-width: $bp-md) {
+  .grid {
+    grid-template-columns: var(--gtc-sm, 1fr);
+    & > * {
+      // grid-column: var(--gc-md, auto);
+      grid-column-end: span var(--sm, 1);
+      // grid-row: var(--gr-md, auto);
+      // flex: var(--sm, 1);
+
+    }
+  }
+}
+
+@media (min-width: $bp-md) {
+  // body { background-color: aliceblue; }
+  .grid {
+    grid-template-columns: var(--gtc-md, repeat(var(--md-cols, 2), [col] 1fr));
+    & > * {
+      grid-column: var(--gc-md, auto);
+      grid-column-end: span var(--md-span, 1);
+      grid-column-end: var(--gce-md, span 1);
+      
+      grid-row:  var(--gr-md, auto);
+      grid-row-end: span var(--md-rspan, 1);
+    }
+    
+    --golden: 1.618fr;
+    &.golden-md {
+      grid-template-columns: 1.618fr 1fr;
+    }
+    &.golden-md-r {
+      grid-template-columns: 1fr 1.618fr ;
+    }
+  }
+}
+
+@media (min-width: $bp-lg) {
+  // body { background-color: linen; }
+  .grid {
+    // should the default be 3 columns or 12 ????
+    grid-template-columns: var(--gtc-lg, repeat(var(--lg-cols, 3), [col] 1fr));
+    & > * {
+      grid-column: var(--gc-lg, var(--gc-md));
+      // grid-column-end: var(--gce-lg, span 1);
+      grid-column-end: span var(--lg-span, var(--md-span,1)); 
+
+      grid-row: var(--gr-lg, auto);
+      grid-row-end: span var(--lg-rspan, var(--md-rspan,1));
+      flex: var(--lg-span, 1);
+    }
+
+    &.golden-lg {
+      grid-template-columns: 1.618fr 1fr;
+    }
+    &.golden-lg-r {
+      grid-template-columns: 1fr 1.618fr ;
+    }
+  }
+}

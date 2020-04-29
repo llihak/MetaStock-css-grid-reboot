@@ -32,9 +32,9 @@
 
 <body>
 
-  <a href="documentation.html">view the documentation page</a>
+  <!-- <a href="documentation.html">view the documentation page</a> -->
 
-  <h3>several ways to do the same thing:</h3>
+  <!-- <h3>several ways to set grid properties:</h3>
   <section style="outline: 1px solid blue;">
     more flexibility is possible (inline styles ala foundation):<pre>
   &lt;div class=&quot;overview grid&quot; style=&quot;--md-cols: 5; --lg-cols: 7;&quot;&gt;&nbsp;
@@ -47,9 +47,9 @@
     </div>
     <div class="pic" style="--md-span: 2; --lg-span: 3">pic</div>
   </div>
-</section>
+</section> -->
 
-  <br><br>
+  <!-- <br><br>
   <section style="outline: 1px solid blue;">
   - or embedded styles -
   <pre>
@@ -82,9 +82,9 @@
     <div class="blurb" >blurb</div>
     <div class="pic" >pic</div>
   </div>
-</section>
+</section> -->
   
-  <br><br>
+  <!-- <br><br>
   <section style="outline: 1px solid blue;">
   - or even simpler, could also be embedded style tag -
   <pre>
@@ -96,39 +96,39 @@
     <div class="blurb">blurb</div>
     <div class="pic">pic</div>
   </div>
-</section>
+</section> -->
 
-  <br />
+  <!--<br />
   <hr />
-  <h3>first grid - <i>reasonable defaults</i> at sm, md, lg</h3>
-  <h4>.grid - no child classes</h4>
+   <h3>first grid - <i>reasonable defaults</i> at sm, md, lg</h3> -->
+  <!-- <h4>.grid - no child classes</h4>
   <div class="first test grid">
     <div class="item">one</div>
     <div class="item">two</div>
     <div class="item">three</div>
     <div class="item">four</div>
     <!-- <div class="item">five</div>
-    <div class="item">six</div> -->
+    <div class="item">six</div> 
   </div>
-
-  <hr />
-
-  <h3>second grid - changed up md and lg via 2 custom properties</h3>
-  <h4>.grid  --gtc-md: 2fr 10fr; --gtc-lg: 50px 8fr 4fr 50px; - no child classes</h4>
+-->
+  
+  <!-- <h3>second grid - changed up md and lg via 2 custom properties</h3> -->
+  <!-- <h4>.grid  --gtc-md: 2fr 10fr; --gtc-lg: 50px 8fr 4fr 50px; - no child classes</h4>
   <div class="second test grid" style="--gtc-md: 2fr 10fr; --gtc-lg: 50px 8fr 4fr 50px;">
     <div class="item">one</div>
     <div class="item">two</div>
     <div class="item">three</div>
     <div class="item">four</div>
     <!-- <div class="item">five</div>
-    <div class="item">six</div> -->
-  </div>
+    <div class="item">six</div> 
+  </div> -->
 
-  <br>
+  <!-- <br>
   <hr>
+  <!-- <span>.grid --gtc-lg: 2fr 1fr - no child classes</span> 
   <div class="MSoverview">
     <div class="hd full">About Metastock</div>
-    <span>.grid --gtc-lg: 2fr 1fr - no child classes</span>
+    
     <div class="bd grid " style="--gtc-lg: 2fr 1fr">
       <div style="margin:0;" class="blurb">
         <p>
@@ -141,9 +141,9 @@
     </div>
 
     <div class="ft full">some buttons</div>
-  </div>
+  </div> -->
 
-  <br />
+  <!-- <br />
   <hr />
   <span>.grid.golden-md </span>
   <div class="MSoverview-2 bd grid golden-md" style="--gg: 0 1rem;">
@@ -155,15 +155,14 @@
     </div>
     <div class="pic">no classes.   monitor pic</div>
     <div class="ft full">.full some buttons</div>
-  </div>
+  </div> -->
 
-  <br />
+  <!-- <br />
   <hr />
-  <span>.grid.golden-lg-r - --gtc-md: 1fr 2.5fr;</span>
   <div class="golden-overview-nested bd grid golden-lg-r" style="--gtc-md: 1fr 2.5fr;--gg: 0 1rem;">
     <div class="hd full">.full - About nesting grids</div>
     <div class="pic">monitor pic</div>
-    <!-- <span>.nested.grid.golden-lg-r - --gtc-md: 1fr;</span> -->
+    <!-- <span>.nested.grid.golden-lg-r - --gtc-md: 1fr;</span> 
     <div class="nested grid golden-lg-r" style="--gtc-md: 1fr; --gg: 5px;" title=".nested.grid.golden-lg-r - --gtc-md: 1fr;">
       <h3 class="heading full">.full A nested grid</h3>
       <div class="nest">
@@ -181,26 +180,72 @@
     </div>
     <div class="ft full">.full - some buttons</div>
   </div>
-
+  <p>.grid.golden-lg-r - --gtc-md: 1fr 2.5fr;</p> -->
+  
   <br />
   <hr />
-  <span>.grid - --gtc-md: 1.618fr  1fr 1fr; --lg-cols: 7;</span>
+  
   <div class="manycols grid" style="--gtc-md: 1.618fr  1fr 1fr; --lg-cols: 7;">
     <div class="col" style="--lg-span: 3">--lg-span: 3</div>
     <div class="col" style="--lg-span: 4">--lg-span: 4</div>
+    
     <div class="col" style="--lg-span: 5">--lg-span: 5</div>
     <div class="col" style="--lg-span: 2">--lg-span: 2</div>
+
     <div class="col" style="--lg-span: 2">--lg-span: 2</div>
     <div class="col" style="--lg-span: 3">--lg-span: 3</div>
     <div class="col" style="--lg-span: 2">--lg-span: 2</div>
+    
+    <div class="col full" style="--lg-span: 2">.full</div>
     <!-- <div class="col" style="--lg-span: 3">col</div>
     <div class="col" style="--lg-span: 3">col</div>
     <div class="col" style="--lg-span: 3">col</div>
     <div class="col" style="--lg-span: 3">col</div>
     <div class="col" style="--lg-span: 3">col</div> -->
   </div>
+  
+  <div class="msg">
+    <p class="sm">.grid - <strong style="background-color: yellow;">--gtc-sm: 1fr;</strong> </p>
+    <p class="md">.grid - <strong style="background-color: yellow;">--gtc-md: 1.618fr  1fr 1fr;</strong> --lg-cols: 7;</p>
+    <p class="lg">.grid - --gtc-md: 1.618fr  1fr 1fr; <strong style="background-color: yellow;">--lg-cols: 7;</strong></p>
+  </div>
+
+  <style>
+    div.msg {margin-top: 2rem;}
+    .msg strong {text-decoration: underline; padding: 1rem; outline: 1px solid red;}
+    @media (max-width: 600px){ .sm {display: block;} .md {display: none;} .lg {display: none;} }
+    @media (min-width: 600px){ .sm {display: none;} .md {display: block;} .lg {display: none;} }
+    @media (min-width: 900px){ .sm {display: none;} .md {display: none;} .lg {display: block;} }
+  </style>
 
   <br><br>
+
+  <section>
+    <ul>
+      <li><h2>.grid <em>(parent)</em></h2>
+        <ul>
+          <li>.grid</li>
+          <li>grid-template-columns: n n n;</li>
+          <li>--md-cols: n; &nbsp;--lg-cols: n</li>
+          <li>--gtc: n n n</li>
+          <li>--gtc-md: n n; &nbsp; --gtc-lg: n n n;</li>
+        </ul>
+      </li>
+      <ul>
+        <li><h2>.grid > *  <em>(children)</em></h2>
+          <ul>
+            <li>grid-column: n;</li>
+            <li>--gc: n;</li>
+            <li>--gc-md: n;  &nbsp; --gc-lg: n;</li>
+            <li>--md-span: n;  &nbsp; --lg-span: n;</li>
+            <li>grid-row: n;</li>
+          </ul>
+        </li>
+      </ul>
+      
+    </ul>
+  
+  </section>
 
   <section>
     <ul>

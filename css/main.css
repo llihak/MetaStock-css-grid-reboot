@@ -1784,7 +1784,7 @@ h1 {
 
 @media (min-width: 600px) {
   .grid {
-    --gtc: var(--gtcm, 1fr 1fr);
+    --gtc: var(--gtc-md, 1fr 1fr);
   }
   .grid > * {
     -ms-grid-column-span: var(--md, 1);
@@ -1797,7 +1797,7 @@ h1 {
 
 @media (min-width: 900px) {
   .grid {
-    --gtc: var(--gtcl, 1fr 1fr 1fr);
+    --gtc: var(--gtc-lg, 1fr 1fr 1fr);
   }
   .grid > * {
     -ms-grid-column-span: var(--lg, 1);
@@ -1807,7 +1807,7 @@ h1 {
             flex: var(--lg);
   }
   .grid.golden-l {
-    --gtcl: 1.61803399fr 1fr;
+    --gtc-lg: 1.61803399fr 1fr;
   }
 }
 
